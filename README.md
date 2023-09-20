@@ -1,9 +1,11 @@
 # EXPERIMENT--04-INTERFACING-AN16X2-LCD-DISPLAY-WITH-ARM AND DISPLAY STRING
 
 
- ## Aim: To Interface a 16X2 LCD display to ARM controller  , and simulate it in Proteus 
-## Components required: STM32 CUBE IDE, Proteus 8 simulator .
-## Theory 
+## Aim:
+To Interface a 16X2 LCD display to ARM controller  , and simulate it in Proteus 
+## Components required: 
+STM32 CUBE IDE, Proteus 8 simulator.
+## Theory: 
 The full form of an ARM is an advanced reduced instruction set computer (RISC) machine, and it is a 32-bit processor architecture expanded by ARM holdings. The applications of an ARM processor include several microcontrollers as well as processors. The architecture of an ARM processor was licensed by many corporations for designing ARM processor-based SoC products and CPUs. This allows the corporations to manufacture their products using ARM architecture. Likewise, all main semiconductor companies will make ARM-based SOCs such as Samsung, Atmel, TI etc.
 
 What is an ARM7 Processor?
@@ -173,15 +175,34 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 
 ## STM 32 CUBE PROGRAM :
+```
+Developed By: Gopika R
+Reg No: 212222240031
+```
+```
+#include "main.h"
+#include "lcd.h"
+ MX_GPIO_Init();
+  Lcd_PortType ports[] = {GPIOA,GPIOA,GPIOA,GPIOA};
+  Lcd_PinType pins[] = {GPIO_PIN_3,GPIO_PIN_2,GPIO_PIN_1,GPIO_PIN_0};
+  Lcd_HandleTypeDef lcd;
+  lcd = Lcd_create(ports,pins,GPIOB,GPIO_PIN_0,GPIOB,GPIO_PIN_1,LCD_4_BIT_MODE);
+  Lcd_cursor(&lcd, 0,0);
+  Lcd_string(&lcd,"DATA SCIENCE");
 
+  Lcd_cursor(&lcd, 1,0);
+  Lcd_string(&lcd,"Gopika R");
+```
 
 
 
 ## Output screen shots of proteus  :
- 
+ ![exp 4-img1](https://github.com/Gopika-9266/EXPERIMENT--04-INTERFACING-AN16X2-LCD-DISPLAY-WITH-ARM-/assets/122762773/ab901397-3987-4425-abd5-cb9573de1b8d)
+
  
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
- 
+ ![exp 4-img2](https://github.com/Gopika-9266/EXPERIMENT--04-INTERFACING-AN16X2-LCD-DISPLAY-WITH-ARM-/assets/122762773/cf35017f-cfa8-4592-bb10-d7640d2125e5)
+
  
 ## Result :
 Interfacing a lcd display with ARM microcontroller are simulated in proteus and the results are verified.
